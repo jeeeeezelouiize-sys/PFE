@@ -1,0 +1,211 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contact.css">
+
+    <title>Contact</title>
+</head>
+<body>
+    <section>
+    <div class="hero"> 
+
+        <header class="header" id="header">
+
+            <div class="logo">
+                <img src="src/logow8.png">
+            </div>
+
+            <div class="header_list">
+                <ul>
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="services.html">Solutions</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="help.html">Requests</a></li>
+                    <li><a href="signup.html">Signup</a></li>
+                </ul>
+            </div>
+
+        </header>
+
+        <div class="hero_text">
+            <h1>Contact Our Team</h1>
+
+            <p>
+                Reach out for product requests, cathodic protection solutions,
+                technical support or additional information.
+            </p>
+        </div>
+
+    </div>
+</section>
+<section class="contact-section">
+
+  <h1 class="contact-title">Contact Us</h1>
+
+  <div class="contact-container">
+
+    <!-- LEFT: FORM -->
+    <div class="contact-form">
+      <h2>How Can We Help?</h2>
+
+      <form action="/submit-request" method="POST">
+
+        <input type="text" name="name" placeholder="Your Name" required>
+
+        <input type="email" name="email" placeholder="Your Email" required>
+
+        <!-- Pre-filled product (from products page) -->
+       
+
+        <select id="request_type" name="request_type">
+          <option value="product" {% if req_type == 'product' %}selected{% endif %}>Product</option>
+          <option value="service">Service</option>
+          <option value="both">Product + Service</option>
+           <option value="info">Request Information</option>
+        </select>
+
+      
+<!-- PRODUCT SELECT -->
+<div id="product_field" class="display-none" >
+
+  <input type="text" id="product_search" placeholder="Search products...">
+
+  <div class="product-list">
+      <label class="product-item" data-name="{{ product.name }}">
+
+  <div class="product-left">
+    <input 
+      type="checkbox" 
+      name="products" 
+      value="{{ product.id }}"
+    >
+  </div>
+
+  <div class="product-right">
+    <div class="product-name"></div>
+    <div class="product-category"></div>
+  </div>
+
+</label>
+  </div>
+
+</div>
+<!-- SERVICE INPUT -->
+<div id="service_field" class="display-none" >
+  <input type="text" name="service" placeholder="Requested Service">
+</div> 
+
+        <textarea name="message" placeholder="Your Message" required></textarea>
+
+        <button type="submit">Send Request</button>
+
+      </form>
+    </div>
+
+    <!-- RIGHT: INFO -->
+    <div class="contact-info">
+      <h2>Contact Information</h2>
+
+    <div class="contact-links">
+
+        <a href="tel:+213000000000">
+            <span>📞</span>
+            <span>+213 765926593</span>
+        </a>
+
+        <a href="mailto:contact@cerep.com">
+            <span>📧</span>
+            <span>contact@cerep.com</span>
+        </a>
+
+        <a href="https://maps.google.com/?q=Algeria" target="_blank">
+            <span>📍</span>
+            <span>Algeria</span>
+        </a>
+
+    </div>
+
+      <!-- MAP -->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.5339305464613!2d1.4927961747157625!3d43.63705855347686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aea2cf60bf1117%3A0x97d3d1c46d4d6224!2sCCTA%20Protection%20Cathodique!5e0!3m2!1sfr!2sus!4v1778251811782!5m2!1sfr!2sus"
+       width="600" height="300" style="border:0;" 
+      allowfullscreen="" loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+    console.log("JS loaded");
+document.addEventListener("DOMContentLoaded", function () {
+
+  const typeSelect = document.getElementById("request_type");
+  const productField = document.getElementById("product_field");
+  const serviceField = document.getElementById("service_field");
+  const searchInput = document.getElementById("product_search");
+
+  function updateFields() {
+  const value = typeSelect.value;
+
+  // RESET everything FIRST
+  productField.classList.add("display-none");
+  serviceField.classList.add("display-none");
+
+  productField.classList.remove("show-field");
+  serviceField.classList.remove("show-field");
+
+  // APPLY correct state
+  if (value === "product") {
+      productField.classList.remove("display-none");
+      productField.classList.add("show-field");
+  }
+
+  if (value === "service") {
+      serviceField.classList.remove("display-none");
+      serviceField.classList.add("show-field");
+  }
+
+  if (value === "both") {
+      productField.classList.remove("display-none");
+      serviceField.classList.remove("display-none");
+
+      productField.classList.add("show-field");
+      serviceField.classList.add("show-field");
+  }
+}
+  typeSelect.addEventListener("change", updateFields);
+  updateFields();
+
+  // SEARCH (INSIDE the same block)
+  if (searchInput) {
+    searchInput.addEventListener("keyup", function() {
+      const value = this.value.toLowerCase();
+      const items = document.querySelectorAll(".product-item");
+
+      items.forEach(item => {
+        const name = item.dataset.name.toLowerCase();
+
+        item.style.display = name.includes(value) ? "block" : "none";
+      });
+    });
+  }
+
+});
+</script>
+</body>
+</html>
