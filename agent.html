@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Agent Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+<div class="card">
+    <h2>Hello, Agent 👋</h2>
+    <p></p>
+</div>
+
+<div class="card">
+    <h3>All Requests</h3>
+
+    <div class="filters">
+
+        <input type="text" placeholder="Search...">
+
+        <select>
+            <option>All</option>
+            <option>Pending</option>
+            <option>In Progress</option>
+            <option>Done</option>
+            <option>Rejected</option>
+        </select>
+
+    </div>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Client</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+
+        <tr>
+            <td>#74</td>
+            <td>Karim Abedelali</td>
+            <td>Product</td>
+            <td>Accepted</td>
+        <td>
+            <div class="actions">
+
+                <button class="btn" onclick="openModal()">View</button>
+
+                <select>
+                    <option>Pending</option>
+                    <option>In Progress</option>
+                    <option>Done</option>
+                    <option>Rejected</option>
+                </select>
+
+                <button class="btn">Update</button>
+
+            </div>
+        </td>
+        </tr>
+
+        <tr>
+            <td>#38</td>
+            <td>Sarah Alouane</td>
+            <td>Product</td>
+            <td>Pending</td>
+        <td>
+            <div class="actions">
+
+                <button class="btn" onclick="openModal()">View</button>
+
+                <select>
+                    <option>Pending</option>
+                    <option>In Progress</option>
+                    <option>Done</option>
+                    <option>Rejected</option>
+                </select>
+
+                <button class="btn">Update</button>
+
+            </div>
+        </td>
+        </tr>
+
+        <tr>
+            <td>#49</td>
+            <td>Ryiadh Ait Moustfaoui</td>
+            <td>Product</td>
+            <td>Pending</td>
+            <td>
+                <div class="actions">
+
+                    <button class="btn" onclick="openModal()">View</button>
+
+                    <select>
+                        <option>Pending</option>
+                        <option>In Progress</option>
+                        <option>Done</option>
+                        <option>Rejected</option>
+                    </select>
+
+                    <button class="btn">Update</button>
+
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="card">
+    <h3>Product Management</h3>
+    <button class="btn">Add Product</button>
+    <button class="btn">Edit Product</button>
+    <button class="btn">Delete Product</button>
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <h3>Request Details</h3>
+
+        <p><strong>ID:</strong> #101</p>
+        <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Email:</strong> john@email.com</p>
+        <p><strong>Type:</strong> Product</p>
+        <p><strong>Product:</strong> Anode Rod</p>
+        <p><strong>Message:</strong> Need pricing details</p>
+        <td><span class="status-pending">Pending</span></td>
+    </div>
+</div>
+
+<script>
+function openModal() {
+    document.getElementById("modal").style.display = "block";
+}
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+</script>
+
+</body>
+</html>

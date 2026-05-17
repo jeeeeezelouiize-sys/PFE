@@ -1,0 +1,11 @@
+*css doesn't apply to p in our mision
+-position:absolute placement (like top-right badge)
+
+
+points to make to jury:
+    -flip cards
+    -multi-device responsiveness
+
+faq sarl
+
+js help products

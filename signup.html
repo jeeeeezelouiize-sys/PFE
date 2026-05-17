@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Signup</title>
+</head>
+<body>
+    <section class="signup-section">
+
+  <!-- LEFT SIDE -->
+  <div class="signup-info">
+    <h1>Join CEREP</h1>
+    <p>
+      Sign up to stay updated, request partnerships, explore job opportunities, 
+      and be part of our network.
+    </p>
+
+    <ul>
+      <li>✔ Stay updated on new products</li>
+      <li>✔ Become a partner</li>
+      <li>✔ Explore career opportunities</li>
+      <li>✔ Get technical support</li>
+    </ul>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="signup-form">
+    <h2>Create Account</h2>
+
+    <form action="/sign-up" method="POST">
+
+      <input type="text" name="name" placeholder="Full Name" required>
+
+      <input type="email" name="email" placeholder="Email Address" required>
+
+      <input type="password" name="password" placeholder="Password" required>
+
+      <select name="interest">
+        <option value="">Select your interest</option>
+        <option value="updates">Stay Updated</option>
+        <option value="partner">Become a Partner</option>
+        <option value="job">Find a Job</option>
+      </select>
+
+      <button type="submit">Sign Up</button>
+
+    </form>
+
+    <p class="login-link">
+      Already have an account? <a href="admin.html">Login</a>
+    </p>
+
+  </div>
+
+</section>
+</body>
+</html>

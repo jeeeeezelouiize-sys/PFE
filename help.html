@@ -1,0 +1,115 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Get Help</title>
+    <link rel="stylesheet" href="help.css">
+</head>
+<body>
+    <section>
+        <div class="header" id="header">
+            <div class="logo">
+                <img src="src/logoblue.png">
+            </div>
+            <div class="header_list">
+                <ul>
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="#contact_form">Solutions</a></li>
+                    <li><a href="solutions.html">Products</a></li>
+                    <li><a href="#main.html#contact_form">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <div class="content">
+            <div class="right">
+                <h1>Send Us A Request</h1>
+                <div class="help"><img src="src/bsymbol.png"><h5>Request one of our services.</h5></div>
+                <div class="help"><img src="src/bsymbol.png"><h5>Purchase one of our products.</h5></div>
+                <div class="help"><img src="src/bsymbol.png"><h5><a href="main.html#contact_form">Request more information (Contact Us).</a></h5></div>
+            </div>
+            <div class="left">
+                <div> 
+                <form id="contact_form" class="contact_form">
+                    <h4>Request Form</h4>
+                    <div class="double_fields">
+                        <div class="field_wrap">
+                            <input type="text" placeholder="First Name" name="fname" id="fname" required>
+                        </div>                        
+                        <div class="field_wrap">
+                            <input type="text" placeholder="Last Name" name="lname" id="lname" required>
+                        </div>
+                    </div>
+
+                    <div class="field_wrap">
+                        <input type="email" placeholder="Email Adress..." name="email" id="email" required>
+                    </div>  
+
+                    <div class="field_wrap">
+                        <input type="number" placeholder="+213..." name="num" id="num" required>
+                    </div>
+
+                    <div class="field_wrap">
+                        <input list="p&s" placeholder="Product/ Service" name="ps" id="ps" required>
+                        <datalist id="p&s">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </datalist>
+                    </div>
+
+                    <div class="double_fields">
+                        <div class="field_wrap">
+                            <input type="text" placeholder="Company Name" name="cname" id="cname" required>
+                        </div>                        
+                        <div class="field_wrap">
+                            <input type="text" placeholder="Adress" name="@" id="@" required>
+                        </div>
+                    </div>
+
+                    <div class="field_wrap">
+                        <textarea type="textarea" placeholder="Your Message..." name="message" id="message"></textarea>
+                    </div>
+
+                    <button type="submit">submit</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <hr id="footer_line"/>
+        <div class="footer">
+            <div>
+                <p>&copy; All Rights Reserved 2026</p>
+            </div>
+            <div class="footer_container">
+                <div class="social_links">
+
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="mailto:ayacheali@gmail.com?subject=Service%20Inquiry&body=Hello, I'd like to inquire about..." target="_blank" rel="noopener noreferrer">
+                    <i class="fa-solid fa-at"></i>
+                    </a>
+                </div>
+                <div><button id="scroll-up"><a href="#header"><i class="fa-solid fa-angles-up"></i></a></button></div>
+            </div>
+        </div>
+    </section>
+    <script src="main.js"></script>
+
+</body>
+</html>
